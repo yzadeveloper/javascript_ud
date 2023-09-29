@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+    <head>
+        <title>Monstrar ingresos de usuario</title>
+    </head>
+    <body>
+        <p>Ingresa tu nombre</p>
+        <input type="text" id="nombreDeUsuario">
+        <button onclick="mostrarNombre()">Ingresar</button>
+        <h1 id="salida">Todavía no sé tu nombre</h1>
+
+        <script>
+            function mostrarNombre(){
+                let elementoNombre = document.getElementById("nombreDeUsuario");
+                let elementoTexto = document.getElementById("salida");
+                let mensaje = "Te llamas " + elementoNombre.value;
+                
+                elementoTexto.textContent = mensaje;
+            }
+        </script>
+    </body>
+</html>
