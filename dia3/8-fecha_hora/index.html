@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+    <head>
+        <title>Fecha y hora</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <!-- funcion para que se active la funcion cuando se recargue la página -->
+    <body onload="comenzarReloj()"> 
+        <input type="number" id="tiempoElegido">
+        <button onclick="comenzarTiempo()">Alarma</button>
+        <h1 id="textoAlarma" >00:00:00</h1>
+
+        <audio id="audioAlarma">
+                <source src="alarma.mp3" type="audio/mpeg">
+                El audio ha fallado
+        </audio>
+        
+        <script>
+            let elementoSegundos = document.getElementById("tiempoElegido");
+            let elementoAlarma = document.getElementById("textoAlarma");
+            let elementoSonidoAlarma = document.getElementById("audioAlarma");
+
+            // empieza el codigo para establecer el reloj
+
+            function comenzarTiempo(){
+                setTimeout(tiempoCumplido, 1000 * elementoSegundos.value);
+            }
+
+            function tiempoCumplido(){
+                
+                elementoAlarma.style.color = "green";
+                elementoSonidoAlarma.play();
+            }
+
+            function comenzarReloj(){
+                setInterval(ticTac, 1000);
+            }
+
+            function ticTac(){
+                let tiempoActual = new Date();
+                let hora = tiempoActual.getHours();
+                let minutos = String(tiempoActual.getMinutes()).padStart(2, "0");
+                let segundos = String(tiempoActual.getSeconds()).padStart(2, "0");
+                // string +... es para que cuando el tiempo pase 59 no ponga 1 si no 01
+
+                let textoHora = hora + ":" + minutos + ":" + segundos;
+                elementoAlarma.textContent = textoHora;
+            }
+
+
+        </script>
+    </body>
+</html>

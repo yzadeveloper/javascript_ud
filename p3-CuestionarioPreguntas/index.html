@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+    <head>
+        <title>Cuestionario preguntas</title>
+        
+    </head>
+    <body onload="comenzarCuentaRegresiva()">
+        <h2>Responde a las preguntas lo más rápido posible <span id="cuentaRegresiva"></span></h2>
+        
+
+        <p>1.Cuál es la capital de España?</p>
+        <input type="text" id="respuesta1">
+
+        <p>2.Cuál es la capital de Galicia?</p>
+        <input type="text" id="respuesta2">
+
+        <p>3.Qué idioma se habla en Galicia?</p>
+        <input type="text" id="respuesta3">
+
+        <p>4.Quién es el patrón de Galicia?</p>
+        <input type="text" id="respuesta4">
+
+        <p>5.Quién fue la escritora más importante de Galicia?</p>
+        <input type="text" id="respuesta5">
+        <br><br>
+
+        <button onclick="mostrarResultado()">Comprobar respuestas</button>
+        <button onclick="volverIntentar()">Volver a intentarlo</button>
+
+        <audio id="audioFinal">
+            <source src="gameover.mp3" type="audio/mpeg">
+            El audio ha fallado
+        </audio>
+
+        <script>
+            
+            let tiempoTerminado;
+            let intervaloDeTiempo;
+
+            function mostrarResultado() {
+                clearInterval(intervaloDeTiempo);
+                clearTimeout(tiempoTerminado);
+                var fechaActual = new Date();
+                let respuesta1 = document.getElementById("respuesta1").value;
+                let respuesta2 = document.getElementById("respuesta2").value;
+                let respuesta3 = document.getElementById("respuesta3").value;
+                let respuesta4 = document.getElementById("respuesta4").value;
+                let respuesta5 = document.getElementById("respuesta5").value;
+                let resultado = respuesta1 + "\n" + respuesta2 + "\n" + respuesta3 + "\n" + respuesta4 + "\n" + respuesta5;
+    
+                alert(resultado + "\n" + " Estos son tus resultados de hoy " + fechaActual.toLocaleDateString('es-ES'));
+
+            }
+
+            function comenzarCuentaRegresiva(){
+                tiempoTerminado = setTimeout(tiempoCumplido, 30000);
+                intervaloDeTiempo =setInterval(ticTac, 1000);
+                document.getElementById("cuentaRegresiva").textContent = 30;
+
+        
+            }
+            
+            function ticTac(){
+                let tiempo = document.getElementById("cuentaRegresiva").textContent;
+                document.getElementById("cuentaRegresiva").textContent = tiempo -1;
+            }
+
+            function tiempoCumplido(){
+                //se resetea intervalodeTiempo
+                clearInterval(intervaloDeTiempo);
+                document.getElementById("cuentaRegresiva").textContent = 0;
+                document.getElementById("audioFinal").play();
+                alert("GAME OVER: Inténtalo de nuevo");
+            }
+
+            function volverIntentar() {
+                location.reload();
+            }
+        </script>
+    </body>
+
+</html>
