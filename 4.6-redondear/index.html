@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+    <head>
+        <title>Redondear</title>
+        
+    </head>
+    <body>
+
+        <script>
+            //redondear:
+            //Math.round(5.236) muesta 5
+            //Math.round(5.863) muestra 6
+            //El punto límite para redondear a la baja o alza es el .5
+
+            //Forzar redondeo a la baja sea cual sea el decimal: Math.floor(16.9) muestra 16
+            //Forzar el redondeo al alza sea cual sea el decimal: Math.ceil(84.000001) muestra 85
+
+            //Redondear el resultado del ejercicio calcular combustible:
+            resultado.textContent = "carga " + cantLitros + " litros de combustible";
+            resultado.textContent = "carga " + Math.ceil(cantLitros) + " litros de combustible";
+
+            //practicas:
+            //Asigne a la variable ya declarada redondeo, el resultado de redondear el siguiente número 6.7241569844.
+            let redondeo;
+            redondeo = Math.round(6.7241569844);
+
+            //Asigne a la variable ya declarada piso, 
+            //el resultado de redondear hacia el entero inferior (o piso) el siguiente número 6.7241569844.
+            let piso;
+            piso = Math.floor(6.7241569844);        
+
+
+        </script>
+        
+    </body>
+
+</html>

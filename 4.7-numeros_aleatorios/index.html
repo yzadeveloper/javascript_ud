@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+    <head>
+        <title>Números aleatorios</title>
+        
+    </head>
+    <body>
+
+        <button onclick="crearAleatorio(10, 15)">Dame un aleatorio</button>
+        <h2>Número aleatorio: <span id="textoAleatorio">- - -</span></h2>
+
+        <script>
+            //Math.random(); muestra un número al azar entre 0 y 1 (nunca muestra ni 0 ni 1).
+
+            let elementoAleatorio = document.getElementById("textoAleatorio");
+
+            function crearAleatorio(minimo, maximo){
+                maximo = maximo + 1;
+                resultado = Math.floor(Math.random() * (maximo - minimo) + minimo);
+                elementoAleatorio.textContent =resultado;
+            }
+            //esta funcion dice: cuando se haga click en en botón se activará la función crearAleatorio
+            //esta función hará que el texto contenido en elementoAleatorio sea un número random redondeado a la baja
+            //si no le decimos entre qué números quiero el random, siempre mostrará 0, porque randomiza entre 0 y 1 (redondeado a la baja es 0)
+
+            //Soluciones:
+            //Math.floor(Math.random() * 11); muestra un número entero entre 0 y 10 porque elimina los dos decimales:
+            //let elementoAleatorio = document.getElementById("textoAleatorio");
+            // function crearAleatorio(){
+            //     elementoAleatorio.textContent = Math.floor(Math.random() * 11);
+            // }
+
+            //Establecer el máximo número a sacar (pasar el número máximo por los parametros en el boton):
+            //function crearAleatorio(maximo){
+            //     maximo = maximo + 1;
+            //     resultado = Math.floor(Math.random() * maximo);
+            //     elementoAleatorio.textContent =resultado;
+            // }
+
+            //Practicas:
+            //Genere un número aleatorio entre 10 y 50 como límites inferior y superior respectivamente.
+            let aleatorio;
+            aleatorio = Math.floor(Math.random() * (50 - 10) + 10);
+
+            //Genere un número aleatorio entre 50 y 100 como límites inferior y superior respectivamente.
+            let aleatorio1;
+            aleatorio1 = Math.floor(Math.random() * (100 - 50) + 50);
+
+           
+
+        </script>
+        
+    </body>
