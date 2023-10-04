@@ -49,5 +49,29 @@ function absoluto(){
   
 }
 
+function aleatorio(){
+    let minimo = +document.getElementById("campo1").value;
+    let maximo = +document.getElementById("campo2").value;
+    maximo = maximo + 1;
+    mostrarResultado(Math.round(Math.random() * (maximo - minimo) + minimo));
+  
+}
+
+function redondeo(){
+    let numero = +document.getElementById("campo2").value;
+    mostrarResultado(Math.round(numero));
+  
+}
+
+function suelo(){
+    let numero = +document.getElementById("campo2").value;
+    mostrarResultado(Math.floor(numero));
+  
+}
+function techo(){
+    let numero = +document.getElementById("campo2").value;
+    mostrarResultado(Math.ceil(numero));
+  
+}
 
 
