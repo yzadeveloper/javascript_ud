@@ -2,8 +2,6 @@
 
     <head>
         <title>Calculadora</title>
-        <script src="index.js"></script>
-        
     </head>
     <body>
 
@@ -34,6 +32,33 @@
         <button onclick="redondeo()">round</button>
         <button onclick="suelo()">floor</button>
         <button onclick="techo()">ceil</button>
+
+        <br>
+        <br>
+        <hr>
+
+        <h1>Calculadora de Fitos</h1>
+
+        <label for="">Terreno</label>
+        <input type="text" id="terreno">
+        <label for="">Dosis general</label>
+        <input type="text" id="dosisGeneral" value="4">
+        
+
+        <br>
+        <br>
+
+        <button onclick="calcHectareas()">Hectáreas</button>
+        <button onclick="calcMetros()">Metros cuadrados</button>
+        <button onclick="calcFerrados()">Ferrados</button>
+
+        <br>
+        <br>
+
+        <div>
+        <label for="">Dosis para ese terreno</label>
+        <input type="text" id="calculo">
+        </div>
 
 
 

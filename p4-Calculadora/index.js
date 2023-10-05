@@ -74,4 +74,27 @@ function techo(){
   
 }
 
+function mostrarCalculo(calculo){
+    document.getElementById("calculo").value = calculo;
+}
 
+function calcHectareas(){
+    let numero1 = +document.getElementById("terreno").value;
+    let numero2 = +document.getElementById("dosisGeneral").value;
+    mostrarCalculo(numero1 * numero2)
+  
+}
+
+function calcMetros(){
+    let numero1 = +document.getElementById("terreno").value;
+    let numero2 = +document.getElementById("dosisGeneral").value;
+    mostrarCalculo((numero1 / 10000) * numero2)
+  
+}
+
+function calcFerrados(){
+    let numero1 = +document.getElementById("terreno").value;
+    let numero2 = +document.getElementById("dosisGeneral").value;
+    mostrarCalculo(((numero1 * 535) / 10000) * numero2)
+  
+}
