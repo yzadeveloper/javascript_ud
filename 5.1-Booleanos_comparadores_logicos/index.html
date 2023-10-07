@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <head>
+        <title>Operadores lógicos</title>
+    </head>
+    <body>
+
+        <p>Ingrese su edad:</p>
+        <input type="number" id="textoEdad">
+        
+        
+        
+        <script>
+
+            //capturar un valor y establecerlo como Edad:
+            let elementoEdad = document.getElementById("textoEdad");
+            let edad = elementoEdad.value;
+
+            //permitir el ingreso al club solo si eres mayor de 18:
+            let puedeIngresar = edad >= 18;
+
+            //permitir el ingreso al club solo si eres mayor de 18 y menor de 30:
+            let puedeIngresar2 = edad >= 18 && edad <= 30;
+            
+            //si tienes 20 o 25 años entras gratis:
+            let puedeIngresarGratis =  edad == 20 || edad == 25;
+
+            
+        </script>
+    </body>
+</html>
