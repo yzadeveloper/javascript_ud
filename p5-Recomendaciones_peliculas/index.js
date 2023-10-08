@@ -1,8 +1,7 @@
 function recomendar(genero) {
     let elementoRecomendacion = document.getElementById("recomendacion");
-    
-    let elementoEdad = document.getElementById("textoEdad");
-    let edad = elementoEdad.value ;
+    let edad = document.getElementById("textoEdad").value;
+  
 
     switch (genero){
         case "comedia":
