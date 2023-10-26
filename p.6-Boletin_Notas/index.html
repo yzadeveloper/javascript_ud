@@ -3,7 +3,24 @@
         <title>Boletin de Notas</title>
        
     </head>
-    <body>
+    <body onload="listarNotas()">
+        <h2>Bienvenida a tu boletín de notas</h2>
+        <h3>Alumna: Ofelia Picamontes</h3>
+
+        <h4>Notas:</h4>
+        <ul id="listaNotas"></ul>
+
+        <div>
+            <h4>Nota media del curso: <span id="promedio"></span></h4>
+            <button onclick="calcularNotaMedia()">Calcular nota media</button>
+
+            <h4>Nota más alta: <span id="notaAlta"></span></h4>
+            <button onclick="buscarNotaAlta()">Buscar la nota más alta</button>
+
+            <h4>Suspensos: <span id="suspenso"></span></h4>
+            <button onclick="buscarSuspenso()">Buscar suspenso</button>
+
+        </div>
         
         
         <script src="index.js"></script>
